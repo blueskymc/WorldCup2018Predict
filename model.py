@@ -10,6 +10,8 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 lay = [4, 200, 200, 3]
+f = torch.nn.Sigmoid()
+#f = torch.nn.ReLU()
 
 class net(nn.Module):
     def __init__(self):
@@ -17,11 +19,11 @@ class net(nn.Module):
         self.Classes = torch.nn.Sequential(
             torch.nn.Linear(lay[0], lay[1]),
             nn.BatchNorm1d(lay[1]),
-            torch.nn.ReLU(),
+            f,
             #torch.nn.Dropout(p=0.5),
             torch.nn.Linear(lay[1], lay[2]),
             nn.BatchNorm1d(lay[2]),
-            torch.nn.ReLU(),
+            f,
             torch.nn.Dropout(p=0.5),
             torch.nn.Linear(lay[2], lay[3]),
         )

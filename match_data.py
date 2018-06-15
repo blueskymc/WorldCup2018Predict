@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-' a detail page module '
+' get datas '
 
 __author__ = 'Ma Cong'
 
